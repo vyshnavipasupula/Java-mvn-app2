@@ -1,0 +1,11 @@
+---
+ - hosts: all
+   tasks:
+     - name: Fetch the file from the jenkins -node1
+       run_once: yes
+       fetch: src=/home/ec2-user/mvn-hello-world.war dest=/home/ec2-user/ flat=yes
+       when: inventory_hostname == 'jenkins -node1' 
+
+     - name: Copy the file from jenkins -node1 to ansible controller
+       copy: src=/home/ec2-user/mvn-hello-world.war dest=/home/ec2-user
+       when: inventory_hostname == 'ansible controller'
