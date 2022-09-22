@@ -12,18 +12,18 @@ spec:
   template:
     metadata:
       labels:
-        app: vyshnavii-mvn-app
+        app: vyshnavi-mvn-app
     spec:
       containers:
-      - name: vyshnavii-mvn-container
-        image: vyshnavipasapula/myapp:v1.0
+      - name: vyshnavi-mvn-container
+        image: vyshnavipasapula/myapp1:v1.0
         ports:
         - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: vyshnavii-np-service
+  name: vyshnavi-np-service
   labels:
     app: vyshnavi-mvn-app
 spec:
